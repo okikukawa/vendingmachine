@@ -51,7 +51,9 @@ class Operation
     if @slot_money >= @drink[0].price
       puts "#{@drink[0][:name]}を購入しました"
       @drink.shift
+      #売上金額はvendingmachineの責務のため不要
       puts "売上金額:#{@drink[0].price}円"
+      #売上金額はvendingmachineの責務のため不要
       @sale = @drink[0].price
       return { change: @slot_money - @drink[0].price }
     end
@@ -90,7 +92,15 @@ class Operation
     end
   end
   def select_drink(number)
-    puts "投入金額を入力してください(10、50、100、500、1000のいずれかの数値)"
+    index = ["---------------------",
+             "以下の中から購入する商品の番号を入力してください",
+             "1:コーラ",
+             "2:水",
+             "3:レッドブル",
+             "---------------------"]
+    index.each do |navigation|
+      puts navigation
+    end
     self.drink_holder.pickup(number)
   end
 end
