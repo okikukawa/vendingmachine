@@ -1,7 +1,7 @@
 class DrinkHolder
   def initialize
-    @coke = [{name: "コーラ",  price:120}] * 5
-    @water = [{name: "水",  price:100}] * 5
+    @coke = [{name: "コーラ", price:120}] * 5
+    @water = [{name: "水", price:100}] * 5
     @redbull = [{name: "レッドブル",  price:200}] * 5
     @drink = []
   end

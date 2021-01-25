@@ -40,24 +40,6 @@ class Operation
     @drink_list.pickup(number)
   end
 
-  def can_purchase_coke?
-    if @slot_money >= 120 && @coke.size >= 1
-      @coke[0][:name]
-    end
-  end
-
-  def can_purchase_water?
-    if @slot_money >= 100 && @water.size >= 1
-      @water[0][:name]
-    end
-  end
-
-  def can_purchase_redbull?
-    if @slot_money >= 200 && @redbull.size >= 1
-      @redbull[0][:name]
-    end
-  end
-
   def add_money
     puts "投入金額を入力してください(10、50、100、500、1000のいずれかの数値)"
     coin = gets.to_i
