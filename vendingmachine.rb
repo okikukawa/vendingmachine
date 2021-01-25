@@ -1,5 +1,5 @@
 # irb
-# require '/Users/mlkuri/workspace/vm/sample.rb'
+# require '/Users/yosuke/workspace/Ruby/vending_machine/vendingmachine.rb'
 require './money.rb'
 require './drinkholder.rb'
 require './operation.rb'
@@ -21,7 +21,11 @@ class VendingMachine
       @current_operation = Operation.new(@drink_holder)
     end
     result = @current_operation.add_money
-    @total_money += result
+    if result.class == Integer
+      @total_money += result
+    else
+      result
+    end
   end
 
   def purchase_drink
@@ -31,7 +35,7 @@ class VendingMachine
     result = @current_operation.purchase
     if result.class == Integer
       @total_sales += result
-      @total_money -= result
+      @total_money = 0 
       @current_operation = nil
     else
       result
