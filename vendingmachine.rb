@@ -20,7 +20,7 @@ class VendingMachine
     if @current_operation.nil?
       @current_operation = Operation.new(@drink_holder)
     end
-    result = @current_operation.add_money #条件分岐を追加
+    result = @current_operation.add_money
     if result.class == Integer
       @total_money += result
     else

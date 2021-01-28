@@ -21,7 +21,6 @@ class Operation
       puts "この商品は購入できません"
     elsif @slot_money >= @drink[0][:price]
       puts "#{@drink[0][:name]}を購入しました"
-      # puts "売上金額:#{@sale}円"
       @slot_money -= @drink[0][:price]
       @sale = @drink[0][:price]
       @drink.shift
